@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Energy - Energía Solar del Futuro</title>
+    <meta name="description" content="Infinite Energy - Sistemas solares para Oil & Gas e industria en Argentina. Instalación, mantenimiento y consultoría en energía renovable.">
+    <meta name="keywords" content="energia solar, oil gas, industria, argentina, paneles solares, infinite energy, neuquen, buenos aires">
+    <meta name="author" content="Infinite Energy">
+    <meta property="og:title" content="Infinite Energy - Energía Solar Oil & Gas e Industria">
+    <meta property="og:description" content="Soluciones solares para proyectos Oil & Gas e industriales en Argentina">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        /* Header específico */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+        }
+        
+        /* Header con fondo cuando no está en hero */
+        #navbar.scrolled {
+            background: rgba(44, 85, 48, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Smooth animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #4a7c59 0%, #2c5530 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(44, 85, 48, 0.3);
+        }
+        
+        /* Scroll offset */
+        section {
+            scroll-margin-top: 10px;
+        }
+        
+        #inicio {
+            scroll-margin-top: 0px;
+        }
+        
+        /* Service cards */
+.service-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 2px solid #4a7c59;
+}
+        
+        /* Project cards */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Carousel styles for nature section */
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .carousel-slide.carousel-active {
+            opacity: 1;
+        }
+        
+        .carousel-slide:first-child {
+            opacity: 1;
+        }
+
+        /* Installation image carousel styles */
+        .installation-image-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .installation-image-slide.installation-image-active {
+            opacity: 1;
+        }
+
+        /* Project carousel styles */
+        .project-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .project-slide.active {
+            opacity: 1;
+        }
+        
+        .project-dot {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .project-dot.active {
+            background-color: white !important;
+        }
+
+        [data-project="1"] .project-slide {
+            object-position: center 25%;
+        }
+
+        [data-project="2"] .project-slide {
+            object-position: center 30%;
+        }
+
+        [data-project="2"] .project-slide:nth-child(2) {
+            object-position: 60% center !important;
+        }
+        [data-project="2"] .project-slide:nth-child(3) {
+            object-position: center 40% !important;
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <!-- Header COMPLETAMENTE LIMPIO -->
+    <header id="navbar">
+        <div class="w-full px-0 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#inicio" class="text-xl font-bold text-white transition-all duration-300 hover:scale-110 pl-6">Infinite Energy</a>
+                
+                <nav class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8">
+                    <a href="#como-funciona" class="text-white/80 hover:text-white transition-colors">Proceso</a>
+                    <a href="#quienes-somos" class="text-white/80 hover:text-white transition-colors">Quiénes Somos</a>
+                    <a href="#servicios" class="text-white/80 hover:text-white transition-colors">Servicios</a>
+                    <a href="#proyectos" class="text-white/80 hover:text-white transition-colors">Proyectos</a>
+                    <a href="#contacto" class="text-white/80 hover:text-white transition-colors">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://i.imgur.com/FvOUpjm.jpeg" 
+                 alt="Solar panels" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-black/20"></div>
+        
+        <div class="relative z-10 h-full flex items-start justify-start pt-40 pl-0">
+            <div class="max-w-3xl pl-6">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg uppercase">
+                    Energía para <br>
+                    Oil & Gas <br>
+                    e industria.
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="como-funciona" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">¿Cómo Funciona?</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="text-sm font-semibold text-green-700 mb-4 uppercase tracking-wider">
+                        LA ENERGÍA SOLAR ES UNA INVERSIÓN
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        Tu camino hacia la energía sustentable
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Tener tu propio sistema solar integral te permite tomar control de tu consumo energético y generar tu propia electricidad. Es una decisión que combina tecnología moderna con ahorro real: reduces significativamente tus costos eléctricos y aumentas el valor de tu propiedad.
+                    </p>
+                    <a href="#servicios" class="text-green-700 font-semibold inline-flex items-center">
+                        Conocer más
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-gradient-to-br from-green-700 to-green-800 rounded-2xl p-8 text-white">
+                    <div class="text-sm font-semibold mb-4 uppercase tracking-wider opacity-80">
+                        VENTAJA
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        ¿Cómo impactará la energía solar en mi negocio?
+                    </h3>
+                    <p class="mb-6 leading-relaxed opacity-90">
+                        El beneficio principal es el control sobre una parte importante de tus costos operativos. Es una inversión a largo plazo que genera ahorros consistentes mes a mes en tu factura, y con el tiempo, esos ahorros van recuperando la inversión inicial.
+                    </p>
+                    <a href="mailto:administracion@infinite-energy.com.ar?subject=Consulta sobre sistema solar integral" class="bg-white text-green-700 font-semibold px-6 py-3 rounded-lg inline-flex items-center">
+                        Empezar ahora
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Nature Section with Automatic Carousel -->
+            <div class="relative rounded-2xl overflow-hidden h-96">
+                <!-- Carousel Images -->
+                <div class="carousel-slide carousel-active">
+                    <img src="https://i.imgur.com/ZvcpsSC.jpeg" 
+                        alt="Nature 1" 
+                        class="w-full h-full object-cover" style="object-position: center 70%;">
+                    </div>
+                <div class="carousel-slide">
+                    <img src="https://i.imgur.com/Z1AyDD1.jpeg" 
+                        alt="Nature 2" 
+                        class="w-full h-full object-cover" style="object-position: center center;">
+                </div>
+                            
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-4">
+                <p class="text-sm text-green-700 uppercase tracking-wider mb-2">NUESTRA EXPERIENCIA</p>
+            </div>
+            
+            <h2 class="text-4xl font-bold text-gray-900 mb-28 text-center max-w-4xl mx-auto leading-tight">
+                Somos una PYME argentina dedicada a brindar soluciones integrales en energía y mantenimiento eléctrico. Con más de una década de experiencia, acompañamos a las grandes empresas en la transición hacia un uso responsable y sustentable de la energía.
+                </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div>
+                    <div class="mb-8">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold" id="installation-number">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900" id="installation-title">Parques Solares</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed" id="installation-description">
+                            Nuestras soluciones solares montadas en tierra convierten espacios terrestres en generadores de energía sustentable. La estructura se instala usando incados helicoidales, bloques de hormigón y pilotes de hormigón.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <button onclick="changeInstallation('prev')" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-green-700 group transition-colors">
+                            <svg class="w-5 h-5 text-gray-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="changeInstallation('next')" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-green-700 group transition-colors">
+                            <svg class="w-5 h-5 text-gray-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Image Carousel -->
+                <div class="relative">
+                    <div class="relative w-full h-64 rounded-2xl shadow-2xl overflow-hidden">
+                        <img class="installation-image-slide installation-image-active" 
+                             src="https://i.imgur.com/UxE2F9C.jpeg" 
+                             alt="Parques Solares"
+                             style="object-fit: cover; object-position: center bottom;">
+                        <img class="installation-image-slide" 
+                             src="https://i.imgur.com/pUJJosQ_d.jpeg?maxwidth=520&shape=thumb&fidelity=high" 
+                             alt="Carport"
+                             style="object-fit: cover; object-position: center 65%;">
+                        <img class="installation-image-slide" 
+                             src="https://i.imgur.com/wzSVk2N.jpeg" 
+                             alt="Instalación en Fachadas"
+                             style="object-fit: cover; object-position: center center;">
+                        <img class="installation-image-slide" 
+                             src="https://i.imgur.com/6trbWV7.jpeg" 
+                             alt="Instalación en Estructura Elevada"
+                             style="object-fit: cover; object-position: center center; transform: scale(1.2);">
+                        <img class="installation-image-slide" 
+                             src="https://i.imgur.com/EhZWy4R.jpeg" 
+                             alt="Instalación en Techos"
+                             style="object-fit: cover; object-position: center 30%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+   <section id="servicios" class="pt-20 pb-10 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Nuestros Servicios</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-700 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Instalación Residencial</h3>
+                    <p class="text-gray-600 leading-relaxed text-center">Sistemas solares diseñados específicamente para hogares, maximizando el ahorro energético y la eficiencia.</p>
+                </div>
+
+                 <!-- Service 6 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-700 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.5L10.25 5l1.75-1.75L13.75 5L12 6.5zM12 6.5L10.25 5l1.75-1.75L13.75 5L12 6.5z"/>
+                            <circle cx="7" cy="9" r="2"/>
+                            <circle cx="17" cy="9" r="2"/>
+                            <circle cx="7" cy="15" r="2"/>
+                            <circle cx="17" cy="15" r="2"/>
+                            <rect x="10" y="11" width="4" height="2" rx="1"/>
+                            <path d="M7 9l3 2M17 9l-3 2M7 15l3-2M17 15l-3-2"/>
+                            </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Monitoreo con Drones</h3>
+                    <p class="text-gray-600 leading-relaxed text-center">Tecnología de drones de alta resolución para detectar anomalías térmicas y daños físicos, mejorando la seguridad del personal técnico y optimizando recursos.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-700 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Proyectos Comerciales</h3>
+                    <p class="text-gray-600 leading-relaxed text-center">Soluciones energéticas a gran escala para empresas e industrias con necesidades específicas.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-700 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Mantenimiento</h3>
+                    <p class="text-gray-600 leading-relaxed text-center">Servicios de mantenimiento preventivo y correctivo para garantizar el óptimo funcionamiento.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-700 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1-1H9a1 1 0 00-1 1v3M4 7h16"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Limpieza</h3>
+                    <p class="text-gray-600 leading-relaxed text-center">Servicios de limpieza especializada para paneles solares, garantizando máxima eficiencia y prolongando la vida útil de su instalación.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-green-700 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Consultoría</h3>
+                    <p class="text-gray-600 leading-relaxed text-center">Asesoramiento especializado para optimizar su transición hacia la energía renovable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Nuestros Proyectos</h2>
+                <p class="text-sm text-green-700 uppercase tracking-wider mb-2">
+                    TE PRESENTAMOS ALGUNAS DE NUESTRAS ÚLTIMAS OBRAS
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 - Techint| Oldelval| OPS -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="project-carousel" data-project="1">
+                            <img src="https://i.imgur.com/gJW1jcW.jpeg" 
+                                alt="Techint - Vista 1" 
+                                class="project-slide active w-full h-full object-cover">
+                            <img src="https://i.imgur.com/rWiOOwN.jpeg" 
+                                alt="Techint - Vista 2" 
+                                class="project-slide w-full h-full object-cover">
+                            <img src="https://i.imgur.com/dLXaLqU.jpeg" 
+                                alt="Techint - Vista 3" 
+                                class="project-slide w-full h-full object-cover">
+                        </div>
+                        <button onclick="changeProjectSlide(1, 'prev')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="changeProjectSlide(1, 'next')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                            <div class="project-dot active w-2 h-2 bg-white rounded-full" onclick="goToProjectSlide(1, 0)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(1, 1)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(1, 2)"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Techint - Oldelval - OPS</h3>
+                        <p class="text-green-700 text-sm mb-2">Neuquén - 70 kWh</p>
+                        <p class="text-gray-600 text-sm">Alimentación solar para operaciones de transporte de hidrocarburos. Instalación elevada especializada.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Lexus Takumi -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="project-carousel" data-project="2">
+                            <img src="https://i.imgur.com/EiySKmY.jpeg" 
+                                 alt="Granja Solar - Vista 1" 
+                                 class="project-slide active w-full h-full object-cover">
+                            <img src="https://i.imgur.com/rlAaQgz.jpeg" 
+                                 alt="Granja Solar - Vista 2" 
+                                 class="project-slide w-full h-full object-cover">
+                            <img src="https://i.imgur.com/AYq58Ib.jpeg" 
+                                 alt="Granja Solar - Vista 3" 
+                                 class="project-slide w-full h-full object-cover">
+                        </div>
+                        <button onclick="changeProjectSlide(2, 'prev')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="changeProjectSlide(2, 'next')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                            <div class="project-dot active w-2 h-2 bg-white rounded-full" onclick="goToProjectSlide(2, 0)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(2, 1)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(2, 2)"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Lexus Takumi</h3>
+                        <p class="text-green-700 text-sm mb-2">Buenos Aires - 30 kWh</p>
+                        <p class="text-gray-600 text-sm">Paneles solares montados en estructura metálica fabricada a medida. Soldadura y anclaje en altura.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - Barbieri -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="project-carousel" data-project="3">
+                            <img src="https://i.imgur.com/c1Ufd2S.jpeg" 
+                                 alt="Planta Industrial - Vista 1" 
+                                 class="project-slide active w-full h-full object-cover">
+                            <img src="https://i.imgur.com/UPIoYKi.jpeg" 
+                                 alt="Planta Industrial - Vista 2" 
+                                 class="project-slide w-full h-full object-cover">
+                        </div>
+                        <button onclick="changeProjectSlide(3, 'prev')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="changeProjectSlide(3, 'next')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                            <div class="project-dot active w-2 h-2 bg-white rounded-full" onclick="goToProjectSlide(3, 0)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(3, 1)"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Barbieri</h3>
+                        <p class="text-green-700 text-sm mb-2">Buenos Aires - 2.9 MWh</p>
+                        <p class="text-gray-600 text-sm">Sistema solar industrial con integración a la red eléctrica y monitoreo en tiempo real.</p>
+                    </div>
+                </div>
+                
+                 <!-- Project 4 - Petromining -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="project-carousel" data-project="4">
+                            <img src="https://i.imgur.com/QexM86G.jpeg" 
+                                 alt="Instalación Residencial - Vista 1" 
+                                 class="project-slide active w-full h-full object-cover">
+                            <img src="https://i.imgur.com/qLVM5BC.jpeg" 
+                                 alt="Instalación Residencial - Vista 2" 
+                                 class="project-slide w-full h-full object-cover">
+                            <img src="https://i.imgur.com/2dmVnm8.jpeg" 
+                                alt="Instalación Residencial - Vista 3" 
+                                class="project-slide w-full h-full object-cover">     
+                        </div>
+                       <button onclick="changeProjectSlide(4, 'prev')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="changeProjectSlide(4, 'next')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                            <div class="project-dot active w-2 h-2 bg-white rounded-full" onclick="goToProjectSlide(4, 0)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(4, 1)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(4, 2)"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Petromining Trafigura</h3>
+                        <p class="text-green-700 text-sm mb-2">Campana, Buenos Aires - 1 MWh</p>
+                        <p class="text-gray-600 text-sm">Sistema solar integral para complejo petroquímico. Parque solar terrestre con integración a infraestructura industrial crítica.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 5 - YPF Victor Contreras -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="project-carousel" data-project="5">
+                            <img src="https://i.imgur.com/b5WO2wT.jpeg" 
+                                 alt="Subestación - Vista 1" 
+                                 class="project-slide active w-full h-full object-cover">
+                            <img src="https://i.imgur.com/CxIWz3t.jpeg" 
+                                 alt="Subestación - Vista 2" 
+                                 class="project-slide w-full h-full object-cover">
+                        </div>
+                        <button onclick="changeProjectSlide(5, 'prev')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="changeProjectSlide(5, 'next')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                            <div class="project-dot active w-2 h-2 bg-white rounded-full" onclick="goToProjectSlide(5, 0)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(5, 1)"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">YPF - Victor Contreras</h3>
+                        <p class="text-green-700 text-sm mb-2">Neuquén - 70 kWh</p>
+                        <p class="text-gray-600 text-sm">Paneles solares montados para la alimentación de válvulas de gas y petróleo.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 6 - General Motors -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="project-carousel" data-project="6">
+                            <img src="https://i.imgur.com/dNlTuDg.jpeg" 
+                                 alt="Líneas de Transmisión - Vista 1" 
+                                 class="project-slide active w-full h-full object-cover">
+                            <img src="https://i.imgur.com/Xyp2Rts.jpeg" 
+                                 alt="Líneas de Transmisión - Vista 2" 
+                                 class="project-slide w-full h-full object-cover">
+                            <img src="https://i.imgur.com/AulMer9.jpeg" 
+                                 alt="Líneas de Transmisión - Vista 3" 
+                                 class="project-slide w-full h-full object-cover">
+                        </div>
+                        <button onclick="changeProjectSlide(6, 'prev')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="changeProjectSlide(6, 'next')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                            <div class="project-dot active w-2 h-2 bg-white rounded-full" onclick="goToProjectSlide(6, 0)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(6, 1)"></div>
+                            <div class="project-dot w-2 h-2 bg-white/50 rounded-full" onclick="goToProjectSlide(6, 2)"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">General Motors</h3>
+                        <p class="text-green-700 text-sm mb-2">Rosario - 1 MWh</p>
+                        <p class="text-gray-600 text-sm">Parque solar para planta automotriz GM. Sistema de energía renovable para complejo industrial de manufactura de vehículos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="pt-20 pb-32 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Contactanos</h2>
+                    <p class="text-sm text-green-700 uppercase tracking-wider mb-2">COMIENCE SU PROYECTO DE ENERGÍA SOLAR HOY MISMO</p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-8">Información de Contacto</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Email</div>
+                                    <div class="text-gray-600">proyectos@infinite-energy.com.ar</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Teléfono</div>
+                                    <div class="text-gray-600">+54 9 11 6740-3700</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Ubicación</div>
+                                    <div class="text-gray-600">Belén de Escobar, Buenos Aires</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Solicite su Cotización</h3>
+                            <p class="text-gray-600 mb-8">Obtenga una evaluación gratuita de su proyecto solar</p>
+                            
+                            <div class="space-y-4">
+                                <a href="mailto:administracion@infinite-energy.com.ar" class="btn-primary block text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300">
+                                    Enviar Email
+                                </a>
+                                <a href="tel:+5491167403700" class="block text-green-700 font-semibold py-4 px-8 rounded-lg border-2 border-green-700 hover:bg-green-700 hover:text-white transition-all duration-300">
+                                    Llamar Ahora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8 text-center">
+                <div>
+                    <a href="#inicio" class="text-lg font-bold text-white mb-2 block">Infinite Energy</a>
+                    <p class="text-gray-400 leading-relaxed">
+                        Transformando el futuro energético de Argentina con soluciones solares innovadoras y sostenibles.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-2">Servicios</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Instalación Residencial</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Proyectos Comerciales</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Mantenimiento</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Consultoría</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-2">Contacto</h4>
+                        <ul class="space-y-2 text-gray-400">
+                        <li>Buenos Aires, Argentina</li>
+                        <li>+54 9 11 6740-3700</li>
+                        <li>+54 9 299 548-2803</li>
+                        <li>administracion@infinite-energy.com.ar</li>
+                        <li>
+                            <a href="https://www.instagram.com/infiniteenergyargentina" target="_blank" class="hover:text-white transition-colors flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                                @infiniteenergyargentina
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 Infinite Energy. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Función global simple para el carrusel
+        window.changeInstallation = function(direction) {
+            var installations = [
+                {
+                    title: "Parques Solares",
+                    description: "Aprovechan grandes extensiones de terreno para maximizar la generación de energía. Al contar con amplios espacios disponibles, se puede instalar una mayor cantidad de paneles, lo que se traduce en una producción energética significativamente superior y mayor retorno de la inversión."
+                },
+                {
+                    title: "Carport",
+                    description: "Permiten combinar protección para vehículos con generación de energía, perfectos para estacionamientos. Maximizan el uso del espacio mientras generan electricidad limpia y ofrecen sombra para los vehículos."
+                },
+                {
+                    title: "Instalación en Fachadas",
+                    description: "Ocupan las paredes de edificios y residencias. Ideales cuando el espacio en techo es limitado o se busca una integración arquitectónica específica. Optimizamos la orientación para máxima captación solar."
+                },
+                {
+                    title: "Instalación en Estructura Elevada",
+                    description: "Los montajes en altura son ideales para terrenos con desniveles o irregularidades. Permiten nivelar los paneles para optimizar la captación solar independientemente de la topografía del terreno."
+                },
+                {
+                    title: "Instalación en Techos",
+                    description: "Emplean diferentes tipos de cubiertas para generar energía sin ocupar espacio adicional. Son la solución más común y eficiente, ya que utilizan superficies existentes que generalmente tienen la orientación e inclinación adecuadas para maximizar la captación solar."
+                }
+            ];
+
+            if (!window.currentInstallationIndex) {
+                window.currentInstallationIndex = 0;
+            }
+
+            if (direction === 'next') {
+                window.currentInstallationIndex = (window.currentInstallationIndex + 1) % installations.length;
+            } else {
+                window.currentInstallationIndex = (window.currentInstallationIndex - 1 + installations.length) % installations.length;
+            }
+            
+            var current = installations[window.currentInstallationIndex];
+            var numberEl = document.getElementById('installation-number');
+            var titleEl = document.getElementById('installation-title');
+            var descEl = document.getElementById('installation-description');
+            
+            if (numberEl) numberEl.textContent = window.currentInstallationIndex + 1;
+            if (titleEl) titleEl.textContent = current.title;
+            if (descEl) descEl.textContent = current.description;
+            
+            // Actualizar imágenes
+            var allImages = document.querySelectorAll('.installation-image-slide');
+            for (var i = 0; i < allImages.length; i++) {
+                allImages[i].classList.remove('installation-image-active');
+            }
+            if (allImages[window.currentInstallationIndex]) {
+                allImages[window.currentInstallationIndex].classList.add('installation-image-active');
+            }
+        };
+
+        // Funciones para los carruseles de proyectos
+        window.projectSlideIndexes = {};
+
+        window.changeProjectSlide = function(projectId, direction) {
+            if (!window.projectSlideIndexes[projectId]) {
+                window.projectSlideIndexes[projectId] = 0;
+            }
+            
+            var carousel = document.querySelector('[data-project="' + projectId + '"]');
+            if (!carousel) return;
+            
+            var slides = carousel.querySelectorAll('.project-slide');
+            var dots = carousel.parentElement.querySelectorAll('.project-dot');
+            
+            // Remover clase active de la imagen actual
+            slides[window.projectSlideIndexes[projectId]].classList.remove('active');
+            dots[window.projectSlideIndexes[projectId]].classList.remove('active');
+            dots[window.projectSlideIndexes[projectId]].style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+            
+            // Calcular nuevo índice
+            if (direction === 'next') {
+                window.projectSlideIndexes[projectId] = (window.projectSlideIndexes[projectId] + 1) % slides.length;
+            } else {
+                window.projectSlideIndexes[projectId] = (window.projectSlideIndexes[projectId] - 1 + slides.length) % slides.length;
+            }
+            
+            // Aplicar clase active a la nueva imagen
+            slides[window.projectSlideIndexes[projectId]].classList.add('active');
+            dots[window.projectSlideIndexes[projectId]].classList.add('active');
+            dots[window.projectSlideIndexes[projectId]].style.backgroundColor = 'white';
+        };
+
+        window.goToProjectSlide = function(projectId, slideIndex) {
+            if (!window.projectSlideIndexes[projectId]) {
+                window.projectSlideIndexes[projectId] = 0;
+            }
+            
+            var carousel = document.querySelector('[data-project="' + projectId + '"]');
+            if (!carousel) return;
+            
+            var slides = carousel.querySelectorAll('.project-slide');
+            var dots = carousel.parentElement.querySelectorAll('.project-dot');
+            
+            // Remover clase active de la imagen actual
+            slides[window.projectSlideIndexes[projectId]].classList.remove('active');
+            dots[window.projectSlideIndexes[projectId]].classList.remove('active');
+            dots[window.projectSlideIndexes[projectId]].style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+            
+            // Establecer nuevo índice
+            window.projectSlideIndexes[projectId] = slideIndex;
+            
+            // Aplicar clase active a la nueva imagen
+            slides[window.projectSlideIndexes[projectId]].classList.add('active');
+            dots[window.projectSlideIndexes[projectId]].classList.add('active');
+            dots[window.projectSlideIndexes[projectId]].style.backgroundColor = 'white';
+        };
+
+        // Header scroll effect
+        function handleScroll() {
+            var navbar = document.getElementById('navbar');
+            var heroSection = document.getElementById('inicio');
+            var heroHeight = heroSection.offsetHeight;
+            var scrollPosition = window.pageYOffset;
+            
+            if (scrollPosition > heroHeight - 50) {
+                navbar.style.background = 'rgba(44, 85, 48, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+            }
+        }
+        
+        window.addEventListener('load', function() {
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar índices de carruseles de proyectos
+            for (var i = 1; i <= 6; i++) {
+                window.projectSlideIndexes[i] = 0;
+            }
+            
+            // Carrusel automático para la sección de naturaleza
+            var carouselSlides = document.querySelectorAll('.carousel-slide');
+            if (carouselSlides.length > 0) {
+                var currentCarouselSlide = 0;
+                function nextCarouselSlide() {
+                    carouselSlides[currentCarouselSlide].classList.remove('carousel-active');
+                    currentCarouselSlide = (currentCarouselSlide + 1) % carouselSlides.length;
+                    carouselSlides[currentCarouselSlide].classList.add('carousel-active');
+                }
+                setInterval(nextCarouselSlide, 2000);
+            }
+
+            // Smooth scrolling for navigation links
+            var anchors = document.querySelectorAll('a[href^="#"]');
+            for (var i = 0; i < anchors.length; i++) {
+                anchors[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#inicio') {
+                        window.scrollTo({top: 0, behavior: 'smooth'});
+                    } else {
+                        var target = document.querySelector(targetId);
+                        if (target) {
+                            target.scrollIntoView({behavior: 'smooth', block: 'start'});
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+                
